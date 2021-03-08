@@ -3,7 +3,7 @@ var plugins = [{
       options: {"plugins":[]},
     },{
       plugin: require('/mnt/c/Users/Rey van den Berg/Dev/Courses/Wes Bos Gatsby/Slices/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
-      options: {"plugins":[],"projectId":"y4nv0j7i","dataset":"production","watchMode":true},
+      options: {"plugins":[],"projectId":"y4nv0j7i","dataset":"production","watchMode":true,"token":"skDwHPwFmO8z8TcK13zHQqr7WWbKoQE8dW9E4uR9HFXlgMy50RGaS55c6vzUvxVm2Zrr6Qff50cV8pr4QEfk3aHP6Suri7yZhudhmp0yG38fSadcvXuzpHdRIiFqHdIba7dJ33oWmunKKn4liMDvaOxPzoVuXYQSzODeN3r6fmEGZr0pLREe"},
     },{
       plugin: require('/mnt/c/Users/Rey van den Berg/Dev/Courses/Wes Bos Gatsby/Slices/gatsby/gatsby-ssr'),
       options: {"plugins":[]},

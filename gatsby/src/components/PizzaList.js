@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
-import styled from "styled-components";
+import React from 'react';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
 
 const PizzaGridStyles = styled.div`
   display: grid;
@@ -34,7 +34,7 @@ function SinglePizza({ pizza }) {
           <span>{pizza.name}</span>
         </h2>
       </Link>
-      <p>{pizza.toppings.map((topping) => topping.name).join(", ")}</p>
+      <p>{pizza.toppings.map((topping) => topping.name).join(', ')}</p>
       <Img fluid={pizza.image.asset.fluid} alt={pizza.name} />
     </PizzaStyles>
   );
