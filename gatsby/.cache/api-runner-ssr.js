@@ -1,4 +1,13 @@
-var plugins = []
+var plugins = [{
+      plugin: require('C:/Users/Rey van den Berg/Dev/Courses/Wes Bos Gatsby/Slices/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('C:/Users/Rey van den Berg/Dev/Courses/Wes Bos Gatsby/Slices/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"y4nv0j7i","dataset":"production","watchMode":true},
+    },{
+      plugin: require('C:/Users/Rey van den Berg/Dev/Courses/Wes Bos Gatsby/Slices/gatsby/gatsby-ssr'),
+      options: {"plugins":[]},
+    }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
 //   {
