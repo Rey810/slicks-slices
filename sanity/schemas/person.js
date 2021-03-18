@@ -1,37 +1,37 @@
-import { MdPerson as icon } from "react-icons/md";
+import { MdPerson as icon } from 'react-icons/md';
 
 export default {
   // Computer name
-  name: "person",
+  name: 'person',
   // visible title
-  title: "Slicemasters",
-  type: "document",
+  title: 'Slicemasters',
+  type: 'document',
   icon,
   fields: [
     {
-      name: "name",
-      title: "Name",
-      type: "string",
+      name: 'name',
+      title: 'Name',
+      type: 'string',
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       options: {
-        source: "name",
+        source: 'name',
         maxLength: 100,
       },
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text",
-      description: "Tell us a bit about them.",
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      description: 'Tell us a bit about them.',
     },
     {
-      name: "image",
-      title: "Image",
-      type: "image",
+      name: 'image',
+      title: 'Image',
+      type: 'image',
       options: {
         hotspot: true,
       },
