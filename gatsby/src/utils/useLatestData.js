@@ -1,5 +1,21 @@
 import { useEffect, useState } from 'react';
 
+// Tricks VSCode so that syntax highlighting for the graphql query can be seen
+const gql = String.raw;
+
+const deets = `
+    name
+    _id
+    image {
+      asset {
+        url
+        metadata {
+          lqip
+        }
+      }
+    }
+`;
+
 export default function useLatestData() {
   // hotslices
   const [hotSlices, setHotSlices] = useState();
@@ -15,28 +31,31 @@ export default function useLatestData() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: `
-                  query {
-  StoreSettings(id: "downtown"){
-    name
-    slicemaster {
-      name
-    }
-    hotSlices {
-      name
-    }
-  }
-}
-                  `,
+        query: gql`
+          query {
+            StoreSettings(id: "downtown") {
+              name
+              slicemaster {
+                ${deets}
+              }
+              hotSlices {
+                ${deets}
+              }
+            }
+          }
+        `,
       }),
     }).then((res) =>
-      res.json().then((res) => {
-        //    Todo: Check for errors
-        setHotSlices(res.data.StoreSettings.hotSlices);
-        setSliceMasters(res.data.StoreSettings.slicemaster);
-        //    set the data to state
-        console.log(res.data);
-      })
+      res
+        .json()
+        .then((res) => {
+          //    Todo: Check for errors
+          setHotSlices(res.data.StoreSettings.hotSlices);
+          setSliceMasters(res.data.StoreSettings.slicemaster);
+          //    set the data to state
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err))
     );
   }, []);
 
