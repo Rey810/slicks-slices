@@ -42,17 +42,22 @@ export default function usePizza({ pizzas, values }) {
       total: formatMoney(calculateOrderTotal(order, pizzas)),
       name: values.name,
       email: values.email,
+      mapleSyrup: values.mapleSyrup,
     };
     console.log('data', body);
 
     // 4. Send data to the serverless function when check out
-    const res = fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
+    const res = await fetch(
+      `${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    );
+
     const text = JSON.parse(await res.text());
 
     // check if everything worked
